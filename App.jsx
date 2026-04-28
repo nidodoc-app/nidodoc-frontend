@@ -1397,21 +1397,6 @@ export default function NidoDoc() {
   const [aiMessage, setAiMessage] = useState(null);
   const bp = useBreakpoint();
 
-  // Config state
-  const [config, setConfig] = useState(() => {
-    try {
-      const saved = localStorage.getItem("nidodoc_config");
-      return saved ? JSON.parse(saved) : null;
-    } catch { return null; }
-  });
-
-  if (!config) {
-    return <SetupScreen onComplete={setConfig} />;
-  }
-
-  const nomeStruttura = config.nome;
-  const cittaStruttura = config.citta;
-  const nomeCoordinatore = config.coordinatore;
 
   const goToAI = (msg) => {
     setAiMessage(msg);
@@ -1465,7 +1450,7 @@ export default function NidoDoc() {
           </div>
           <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
             {totalAlerts > 0 && <div style={{ background: C.red, color: "white", fontSize: 11, fontWeight: 700, padding: "2px 8px", borderRadius: 10 }}>{totalAlerts} avvisi</div>}
-            <div style={{ width: 32, height: 32, borderRadius: "50%", background: "rgba(255,255,255,0.2)", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700 }}>{nomeCoordinatore.split(" ").map(n => n[0]).join("").slice(0,2).toUpperCase()}</div>
+            <div style={{ width: 32, height: 32, borderRadius: "50%", background: "rgba(255,255,255,0.2)", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, fontWeight: 700 }}>CG</div>
           </div>
         </div>
 
@@ -1522,7 +1507,7 @@ export default function NidoDoc() {
           <div style={{ marginTop: "auto", padding: "16px" }}>
             {totalAlerts > 0 && <div style={{ background: C.red, color: "white", fontSize: 11, fontWeight: 700, padding: "4px 10px", borderRadius: 8, textAlign: "center" }}>{totalAlerts} avvisi attivi</div>}
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 12 }}>
-              <div style={{ width: 30, height: 30, borderRadius: "50%", background: "rgba(255,255,255,0.2)", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700 }}>{nomeCoordinatore.split(" ").map(n => n[0]).join("").slice(0,2).toUpperCase()}</div>
+              <div style={{ width: 30, height: 30, borderRadius: "50%", background: "rgba(255,255,255,0.2)", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 700 }}>CG</div>
               <div style={{ color: "rgba(255,255,255,0.8)", fontSize: 11 }}>Carla Gatti<br /><span style={{ opacity: 0.6 }}>Coordinatrice</span></div>
             </div>
           </div>
@@ -1581,7 +1566,7 @@ export default function NidoDoc() {
         )}
         <div style={{ marginTop: "auto", padding: "16px 20px", borderTop: "0.5px solid rgba(255,255,255,0.15)" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <div style={{ width: 34, height: 34, borderRadius: "50%", background: "rgba(255,255,255,0.2)", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700 }}>{nomeCoordinatore.split(" ").map(n => n[0]).join("").slice(0,2).toUpperCase()}</div>
+            <div style={{ width: 34, height: 34, borderRadius: "50%", background: "rgba(255,255,255,0.2)", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 700 }}>CG</div>
             <div>
               <div style={{ color: "white", fontSize: 12, fontWeight: 600 }}>Carla Gatti</div>
               <div style={{ color: "rgba(255,255,255,0.55)", fontSize: 11 }}>Coordinatrice</div>
